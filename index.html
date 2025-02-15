@@ -1,53 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>University Semester Average Calculator</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Semester Average Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="container">
+    <h1 style="margin-bottom: 20px;">University Semester Average Calculator</h1>
 
-<h1 style="margin-bottom: 20px;">University Semester Average Calculator</h1>
+    <!-- Semester S5 -->
+    <div id="s5" class="semester">
+        <h2>Semester S5</h2>
+        
+        <div class="module">
+            <label>Mesure et Intégration:</label>
+            <div class="input-group">
+                <span>(TD)</span> <input type="number" id="s5m1td" step="0.01" min="0" max="20" value="0">
+                <span>(Exam)</span> <input type="number" id="s5m1exam" step="0.01" min="0" max="20" value="0">
+            </div>
+        </div>
 
-<!-- Semester S5 -->
-<div id="s5" class="semester">
-  <h2>Semester S5</h2>
-  <div class="module"><label for="s5m1td">Mesure et Intégration (TD):</label><input type="number" id="s5m1td" step="0.01" min="0" max="20" value="0"> Exam:<input type="number" id="s5m1exam" step="0.01" min="0" max="20" value="0"></div>
-  <div class="module"><label for="s5m2td">EDP (TD):</label><input type="number" id="s5m2td" step="0.01" min="0" max="20" value="0"> Exam:<input type="number" id="s5m2exam" step="0.01" min="0" max="20" value="0"></div>
-  <div class="module"><label for="s5m3td">EDO (TD):</label><input type="number" id="s5m3td" step="0.01" min="0" max="20" value="0"> Exam:<input type="number" id="s5m3exam" step="0.01" min="0" max="20" value="0"></div>
-  <div class="module"><label for="s5m4td">EVN (TD):</label><input type="number" id="s5m4td" step="0.01" min="0" max="20" value="0"> Exam:<input type="number" id="s5m4exam" step="0.01" min="0" max="20" value="0"></div>
-  <div class="module"><label for="s5m5td">Optimisation Sans Contraintes (TD):</label><input type="number" id="s5m5td" step="0.01" min="0" max="20" value="0"> Exam:<input type="number" id="s5m5exam" step="0.01" min="0" max="20" value="0"></div>
-  <div class="module"><label for="s5m6exam">Didactiques (Exam Only):</label><input type="number" id="s5m6exam" step="0.01" min="0" max="20" value="0"></div>
-  <button onclick="calculateS5()">Calculate S5 Average</button>
-  <div id="s5Result" class="result-box"></div>
-</div>
+        <div class="module">
+            <label>EDP:</label>
+            <div class="input-group">
+                <span>(TD)</span> <input type="number" id="s5m2td" step="0.01" min="0" max="20" value="0">
+                <span>(Exam)</span> <input type="number" id="s5m2exam" step="0.01" min="0" max="20" value="0">
+            </div>
+        </div>
 
-<!-- Semester S6 -->
-<div id="s6" class="semester">
-  <h2>Semester S6</h2>
-  <div class="module"><label for="s6m1td">EDO/EDP (TD):</label><input type="number" id="s6m1td" step="0.01" min="0" max="20" value="0"> Exam:<input type="number" id="s6m1exam" step="0.01" min="0" max="20" value="0"></div>
-  <div class="module"><label for="s6m2td">EDP (TD):</label><input type="number" id="s6m2td" step="0.01" min="0" max="20" value="0"> Exam:<input type="number" id="s6m2exam" step="0.01" min="0" max="20" value="0"></div>
-  <div class="module"><label for="s6m3td">Espace LP (TD):</label><input type="number" id="s6m3td" step="0.01" min="0" max="20" value="0"> Exam:<input type="number" id="s6m3exam" step="0.01" min="0" max="20" value="0"></div>
-  <div class="module"><label for="s6m4td">Géométrie Différentielle (TD):</label><input type="number" id="s6m4td" step="0.01" min="0" max="20" value="0"> Exam:<input type="number" id="s6m4exam" step="0.01" min="0" max="20" value="0"></div>
-  <div class="module"><label for="s6m5exam">Ethics (Exam Only):</label><input type="number" id="s6m5exam" step="0.01" min="0" max="20" value="0"></div>
-  <button onclick="calculateS6()">Calculate S6 Average</button>
-  <div id="s6Result" class="result-box"></div>
-</div>
+        <div class="module">
+            <label>EDO:</label>
+            <div class="input-group">
+                <span>(TD)</span> <input type="number" id="s5m3td" step="0.01" min="0" max="20" value="0">
+                <span>(Exam)</span> <input type="number" id="s5m3exam" step="0.01" min="0" max="20" value="0">
+            </div>
+        </div>
 
-<!-- Annual Average -->
-<div id="annual" class="semester">
-  <h2>Annual Average</h2>
-  <div class="module"><label for="annualS5">S5 Average:</label><input type="number" id="annualS5" step="0.01" min="0" max="20" value="0"></div>
-  <div class="module"><label for="annualS6">S6 Average:</label><input type="number" id="annualS6" step="0.01" min="0" max="20" value="0"></div>
-  <button onclick="calculateAnnual()">Calculate Annual Average</button>
-  <div id="annualResult" class="result-box"></div>
-</div>
+        <div class="module">
+            <label>EVN:</label>
+            <div class="input-group">
+                <span>(TD)</span> <input type="number" id="s5m4td" step="0.01" min="0" max="20" value="0">
+                <span>(Exam)</span> <input type="number" id="s5m4exam" step="0.01" min="0" max="20" value="0">
+            </div>
+        </div>
 
-<div class="footer">Powered by Maimana ❤️</div>
+        <div class="module">
+            <label>Optimisation Sans Contraintes:</label>
+            <div class="input-group">
+                <span>(TD)</span> <input type="number" id="s5m5td" step="0.01" min="0" max="20" value="0">
+                <span>(Exam)</span> <input type="number" id="s5m5exam" step="0.01" min="0" max="20" value="0">
+            </div>
+        </div>
 
+        <div class="module">
+            <label>Didactiques (Exam Only):</label>
+            <input type="number" id="s5m6exam" step="0.01" min="0" max="20" value="0">
+        </div>
+
+        <button onclick="calculateS5()">Calculate S5 Average</button>
+        <div id="s5Result" class="result-box"></div>
+    </div>
+
+    <!-- Semester S6 -->
+    <div id="s6" class="semester">
+        <h2>Semester S6</h2>
+        
+        <div class="module">
+            <label>EDO/EDP:</label>
+            <div class="input-group">
+                <span>(TD)</span> <input type="number" id="s6m1td" step="0.01" min="0" max="20" value="0">
+                <span>(Exam)</span> <input type="number" id="s6m1exam" step="0.01" min="0" max="20" value="0">
+            </div>
+        </div>
+
+        <div class="module">
+            <label>EDP:</label>
+            <div class="input-group">
+                <span>(TD)</span> <input type="number" id="s6m2td" step="0.01" min="0" max="20" value="0">
+                <span>(Exam)</span> <input type="number" id="s6m2exam" step="0.01" min="0" max="20" value="0">
+            </div>
+        </div>
+
+        <div class="module">
+            <label>Espace LP:</label>
+            <div class="input-group">
+                <span>(TD)</span> <input type="number" id="s6m3td" step="0.01" min="0" max="20" value="0">
+                <span>(Exam)</span> <input type="number" id="s6m3exam" step="0.01" min="0" max="20" value="0">
+            </div>
+        </div>
+
+        <div class="module">
+            <label>Géométrie Différentielle:</label>
+            <div class="input-group">
+                <span>(TD)</span> <input type="number" id="s6m4td" step="0.01" min="0" max="20" value="0">
+                <span>(Exam)</span> <input type="number" id="s6m4exam" step="0.01" min="0" max="20" value="0">
+            </div>
+        </div>
+
+        <div class="module">
+            <label>Ethics (Exam Only):</label>
+            <input type="number" id="s6m5exam" step="0.01" min="0" max="20" value="0">
+        </div>
+
+        <button onclick="calculateS6()">Calculate S6 Average</button>
+        <div id="s6Result" class="result-box"></div>
+    </div>
+
+    <!-- Annual Average -->
+    <div id="annual" class="semester">
+        <h2>Annual Average</h2>
+
+        <div class="module">
+            <label>S5 Average:</label>
+            <input type="number" id="annualS5" step="0.01" min="0" max="20" value="0">
+        </div>
+
+        <div class="module">
+            <label>S6 Average:</label>
+            <input type="number" id="annualS6" step="0.01" min="0" max="20" value="0">
+        </div>
+
+        <button onclick="calculateAnnual()">Calculate Annual Average</button>
+        <div id="annualResult" class="result-box"></div>
+    </div>
+
+    <div class="footer">Powered by Maimana ❤️</div>
 </div>
 
 <script src="script.js"></script>
