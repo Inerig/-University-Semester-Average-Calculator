@@ -56,6 +56,20 @@ label {
     margin-bottom: 3px;
 }
 
+/* Added styles for clear TD and Exam labels */
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.input-group span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #a020f0;
+}
+
 input[type="number"] {
     width: 60px; /* Smaller input boxes */
     padding: 6px;
@@ -112,6 +126,10 @@ button:hover {
         width: 100%;
     }
 
+    .input-group {
+        flex-direction: column;
+    }
+
     input[type="number"] {
         width: 50px;
         font-size: 12px;
@@ -123,8 +141,7 @@ button:hover {
         font-size: 14px;
     }
 }
-
-    button {
+button {
         width: 100%;
         max-width: 200px;
     }
